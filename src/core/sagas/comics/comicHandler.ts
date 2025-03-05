@@ -9,12 +9,16 @@ export function* handleGetComics(action: any) {
        const response: ResponseGenerator = yield call(requestGetComics);
        const { data } = response;
         let comicList: ComicViewModel[] = [];
-        comicList = data.data.results.map((item: any) =>{
+        comicList = data.map((item: any) =>{
             return{
-                ...data.data.results,
+                ...data,
                 id: item.id,
                 title: item.title,
-                img: `${item.images.map((img:any) => img.path)}\\portrait_xlarge.jpg`
+                cover: item.cover,
+                description: item.description,
+                editor: item.editor,
+                writer: item.writer,
+                penciller: item.penciller,
             }
         })
      yield put(setComics(comicList));

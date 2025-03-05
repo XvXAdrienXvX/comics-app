@@ -2,7 +2,7 @@ import React from "react";
 import { Fragment, ReactNode } from "react";
 import { ComicViewModel } from "../../../models/comic.model";
 import { GrAddCircle } from 'react-icons/gr';
-import Button from "../../../components/customButton.component";
+import Button from "../../../components/custom-button.component";
 
 type Props = {
   comic: ComicViewModel
